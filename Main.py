@@ -123,3 +123,66 @@ for i in range(3,len(list_n),3):
     sum += min(new_n)*3
 print('Результат ' + str(sum) )  
 '''
+from random import *
+#1.Создайте список из случайных чисел. Найдите номер его последнего локального максимума (локальный максимум — это элемент, который больше любого из своих соседей).
+def ran (i):
+    list_3 = []
+    for i in range(0,i):
+        list_3.append(randint(-100,100))
+    return  list_3
+    
+ 
+
+def FirstlocalMaxtoEnd (list_2,n):
+    
+    if (list_2[n-1]<list_2[n]):
+        return n
+    return FirstlocalMaxtoEnd (list_2,n-1)
+    
+
+'''
+n = int(input("ВВедите кол-во элементов:"))
+list_1 = ran (n)
+print (*list_1)
+if n <2:
+    print (n)
+else : print (FirstlocalMaxtoEnd (list_1,len(list_1)-1))
+'''
+#2.Создайте список из случайных чисел. Найдите максимальное количество его одинаковых элементов.
+
+'''
+n = int(input("ВВедите кол-во элементов:"))
+list_1 = ran (n)
+print (*list_1)
+maxCount  = -1
+maxVal = None
+for i in range (0,n):
+  if ( list_1.count(list_1[i]) > maxCount):
+      maxCount = list_1.count(list_1[i])
+      maxVal = list_1[i]
+print (maxCount)
+print (maxVal)
+'''
+#3.Создайте список из случайных чисел. Найдите второй максимум.
+#a = [1, 2, 3] # Первый максимум == 3, второй == 2
+'''
+n = int(input("ВВедите кол-во элементов:"))
+list_1 = ran (n)
+print (*list_1)
+if n <2:
+    print (n)
+else : print (FirstlocalMaxtoEnd (list_1,(FirstlocalMaxtoEnd (list_1,len(list_1)-1)-1)))
+'''
+#4.Создайте список из случайных чисел. Найдите количество различных элементов в нем.
+'''
+n = int(input("ВВедите кол-во элементов:"))
+list_1 = ran (n)
+print (*list_1)
+maxCount  = -1
+maxVal = None
+for i in range (0,n):
+ 
+      print ( "элемент " + str(list_1[i]) + " встречается " + str(list_1.count(list_1[i])) + "раз")
+     
+'''
+    
